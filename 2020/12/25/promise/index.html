@@ -8,6 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
+    promise |
     
     Hexo</title>
   
@@ -30,25 +31,78 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="gallery-" class="article article-type-gallery" itemscope
+  <article id="post-promise" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
     
+    <header class="article-header">
+      
 
+<h1 class="article-title" itemprop="name">
+  promise
+</h1>
+
+
+
+    </header>
     
 
+    
+    <div class="article-meta">
+      <a href="/2020/12/25/promise/" class="article-date">
+  <time datetime="2020-12-25T09:44:23.000Z" itemprop="datePublished">2020-12-25</time>
+</a>
+      
+    </div>
+    
+
+    
+    
     
 
     <div class="article-entry" itemprop="articleBody">
       
+<div class="justified-gallery" id="gallery">
+  
+  <div>
+    <a class="fancybox" data-fancybox="images" data-caption="img_caption" target="_blank" href="http://pic.netbian.com/uploads/allimg/200602/211830-15911039105775.jpg"
+      rel="gallery_ckj54unw50002z8uj33j4ha76 noopener" title="img_caption">
+      <img src="http://pic.netbian.com/uploads/allimg/200602/211830-15911039105775.jpg" itemprop="image" alt="img_caption">
+    </a>
+  </div>
+  
+  <div>
+    <a class="fancybox" data-fancybox="images" data-caption="img_caption" target="_blank" href="http://pic.netbian.com/uploads/allimg/201012/223213-160251313355e9.jpg"
+      rel="gallery_ckj54unw50002z8uj33j4ha76 noopener" title="img_caption">
+      <img src="http://pic.netbian.com/uploads/allimg/201012/223213-160251313355e9.jpg" itemprop="image" alt="img_caption">
+    </a>
+  </div>
+  
+</div>
+
       
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+    
+    <img src="http://pic.netbian.com/uploads/allimg/201215/195916-16080335566e9f.jpg" itemprop="image">
+    
+    
+    
+    <img src="http://pic.netbian.com/uploads/allimg/191121/224644-1574347604d36e.jpg" itemprop="image">
+    
+    
+  </div>
+</div>
+
       
-      
+      <p>我的</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/gallery/index.html" data-id="ckj54unw40001z8ujc7scf01d" class="article-share-link">
+      <a data-url="http://example.com/2020/12/25/promise/" data-id="ckj54unw50002z8uj33j4ha76" class="article-share-link">
         Share
       </a>
       
@@ -58,7 +112,46 @@
 
   
   
+<nav class="article-nav">
   
+  
+  <a href="/2020/12/25/hello-world/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">Hello World</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
 
   
 
@@ -70,6 +163,8 @@
       <ul class="list-inline">
   
   <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
   
 </ul>
     </div>
@@ -159,6 +254,23 @@
 
 
 
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
 
 
 
