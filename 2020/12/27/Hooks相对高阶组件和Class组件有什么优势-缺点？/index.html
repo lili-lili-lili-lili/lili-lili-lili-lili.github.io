@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    promise |
+    Hooks相对高阶组件和Class组件有什么优势/缺点？ |
     
     Hexo</title>
   
@@ -31,7 +31,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-promise" class="article article-type-post" itemscope
+  <article id="react-Hooks相对高阶组件和Class组件有什么优势-缺点？" class="article article-type-react" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,7 +40,7 @@
       
 
 <h1 class="article-title" itemprop="name">
-  promise
+  Hooks相对高阶组件和Class组件有什么优势/缺点？
 </h1>
 
 
@@ -50,8 +50,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/12/25/promise/" class="article-date">
-  <time datetime="2020-12-25T09:44:23.000Z" itemprop="datePublished">2020-12-25</time>
+      <a href="/2020/12/27/Hooks%E7%9B%B8%E5%AF%B9%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%92%8CClass%E7%BB%84%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF-%E7%BC%BA%E7%82%B9%EF%BC%9F/" class="article-date">
+  <time datetime="2020-12-27T12:15:41.000Z" itemprop="datePublished">2020-12-27</time>
 </a>
       
     </div>
@@ -59,50 +59,27 @@
 
     
     
+<div class="tocbot"></div>
+
     
 
     <div class="article-entry" itemprop="articleBody">
       
-<div class="justified-gallery" id="gallery">
-  
-  <div>
-    <a class="fancybox" data-fancybox="images" data-caption="img_caption" target="_blank" href="http://pic.netbian.com/uploads/allimg/200602/211830-15911039105775.jpg"
-      rel="gallery_ckj73uzp10004vwuj8v8h4ajs noopener" title="img_caption">
-      <img src="http://pic.netbian.com/uploads/allimg/200602/211830-15911039105775.jpg" itemprop="image" alt="img_caption">
-    </a>
-  </div>
-  
-  <div>
-    <a class="fancybox" data-fancybox="images" data-caption="img_caption" target="_blank" href="http://pic.netbian.com/uploads/allimg/201012/223213-160251313355e9.jpg"
-      rel="gallery_ckj73uzp10004vwuj8v8h4ajs noopener" title="img_caption">
-      <img src="http://pic.netbian.com/uploads/allimg/201012/223213-160251313355e9.jpg" itemprop="image" alt="img_caption">
-    </a>
-  </div>
-  
-</div>
-
       
-<div class="article-gallery">
-  <div class="article-gallery-photos">
-    
-    
-    <img src="http://pic.netbian.com/uploads/allimg/201215/195916-16080335566e9f.jpg" itemprop="image">
-    
-    
-    
-    <img src="http://pic.netbian.com/uploads/allimg/191121/224644-1574347604d36e.jpg" itemprop="image">
-    
-    
-  </div>
-</div>
-
       
-      <p>我的</p>
+      <h3 id="一、Hooks组件相比于Class组件"><a href="#一、Hooks组件相比于Class组件" class="headerlink" title="一、Hooks组件相比于Class组件"></a>一、Hooks组件相比于Class组件</h3><p>hooks组件其实是降低了react开发的使用难度的，让新手可以在不使用class组件的情况下依然可以进行项目开发。<br>1.不需要学习class组件的生命周期的使用了。【仅做个了解即可】<br>2.如果你的js基础不是很扎实的话，就帮你暂时省去this的指向问题的学习了。<br>3.可以不用使用高阶组件依然可以进行功能复用了。<br>4.如果开发团队的代码质量很高的话，那么维护起来比class组件简单N倍。<br>5.只需要学好hooks组件的hooks【感觉有点别扭，但不是错误哈】那么你的项目性能就已经是很优的状态了。</p>
+<h4 id="二、Hooks组件相比于高阶组件"><a href="#二、Hooks组件相比于高阶组件" class="headerlink" title="二、Hooks组件相比于高阶组件"></a>二、Hooks组件相比于高阶组件</h4><p>Hooks组件复用逻辑相比高阶组件复用逻辑更易维护，可以很清楚的知道当前的逻辑代码在哪里，然后进行维护。</p>
+<h5 id="举一个极端的例子："><a href="#举一个极端的例子：" class="headerlink" title="举一个极端的例子："></a>举一个极端的例子：</h5><p>某个组件从3个以上的高阶组件去复用逻辑。<br>那么它的代码可能看起来是这样：</p>
+<p>1.this.props.xxx();<br>2.this.props.aaa();<br>3.this.props.bbb();</p>
+<p>如果xxx出现了问题，如果对项目不熟悉的人的话想要找这个方法就要分别去这三个高阶组件里面去找，或者去父组件里面去找。</p>
+<p>可维护性差！</p>
+<p>我们来看一下Hooks组件：<br>1.const { xxx } = useXXX();<br>2.const { aaa } = useAAA();<br>3.const { bbb } = useBBB();</p>
+<p>当我们发现那个有问题的时候哪里有问题点哪里即可，很轻松的就能找到代码。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/25/promise/" data-id="ckj73uzp10004vwuj8v8h4ajs" class="article-share-link">
+      <a data-url="http://example.com/2020/12/27/Hooks%E7%9B%B8%E5%AF%B9%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%92%8CClass%E7%BB%84%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF-%E7%BC%BA%E7%82%B9%EF%BC%9F/" data-id="ckj73uzoj0000vwujfels0nml" class="article-share-link">
         Share
       </a>
       
@@ -114,19 +91,10 @@
   
 <nav class="article-nav">
   
+  
   <a href="/2020/12/27/hooks/" class="article-nav-link">
-    <strong class="article-nav-caption">Newer</strong>
-    <div class="article-nav-title">
-      
-      hooks
-      
-    </div>
-  </a>
-  
-  
-  <a href="/2020/12/25/hello-world/" class="article-nav-link">
     <strong class="article-nav-caption">Older</strong>
-    <div class="article-nav-title">Hello World</div>
+    <div class="article-nav-title">hooks</div>
   </a>
   
 </nav>
