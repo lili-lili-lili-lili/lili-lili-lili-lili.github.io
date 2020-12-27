@@ -68,11 +68,12 @@
       
       
       <h2 id="关于hooks"><a href="#关于hooks" class="headerlink" title="关于hooks"></a>关于hooks</h2><h3 id="什么是React-Hooks"><a href="#什么是React-Hooks" class="headerlink" title="什么是React Hooks"></a>什么是React Hooks</h3><p>React Hooks是React 16.7.0版本推出的新特性</p>
+<h4 id="React-Hooks-要解决的问题是状态共享"><a href="#React-Hooks-要解决的问题是状态共享" class="headerlink" title="React Hooks 要解决的问题是状态共享"></a>React Hooks 要解决的问题是状态共享</h4><p>大家都知道类组件和函数组件最大的区别就是一个是有状态(state)一个是无状态,下面给大家看一下hooks基本用法<br><code>js function App() &#123;   const [open, setOpen] = useState(false);   return (     &lt;&gt;       &lt;Button type=&quot;primary&quot; onClick=&#123;() =&gt; setOpen(true)&#125;&gt;         Open Modal       &lt;/Button&gt;       &lt;Modal         visible=&#123;open&#125;         onOk=&#123;() =&gt; setOpen(false)&#125;         onCancel=&#123;() =&gt; setOpen(false)&#125;       /&gt;     &lt;/&gt;   ); &#125;</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/27/hooks/" data-id="ckj711aul0003hcuj61x77gvs" class="article-share-link">
+      <a data-url="http://example.com/2020/12/27/hooks/" data-id="ckj71ld8h0003jwujgt3h7ubx" class="article-share-link">
         Share
       </a>
       
