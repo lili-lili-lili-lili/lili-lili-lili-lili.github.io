@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>promise</title>
-    <url>/2020/12/25/promise/</url>
-    <content><![CDATA[<p>我的</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>hooks</title>
-    <url>/2020/12/27/hooks/</url>
-    <content><![CDATA[<h2 id="关于hooks"><a href="#关于hooks" class="headerlink" title="关于hooks"></a>关于hooks</h2><h3 id="什么是React-Hooks"><a href="#什么是React-Hooks" class="headerlink" title="什么是React Hooks"></a>什么是React Hooks</h3><p>React Hooks是React 16.7.0版本推出的新特性</p>
-<h4 id="React-Hooks-要解决的问题是状态共享"><a href="#React-Hooks-要解决的问题是状态共享" class="headerlink" title="React Hooks 要解决的问题是状态共享"></a>React Hooks 要解决的问题是状态共享</h4><p>大家都知道类组件和函数组件最大的区别就是一个是有状态(state)一个是无状态,下面给大家看一下hooks基本用法<br><code>js function App() &#123;   const [open, setOpen] = useState(false);   return (     &lt;&gt;       &lt;Button type=&quot;primary&quot; onClick=&#123;() =&gt; setOpen(true)&#125;&gt;         Open Modal       &lt;/Button&gt;       &lt;Modal         visible=&#123;open&#125;         onOk=&#123;() =&gt; setOpen(false)&#125;         onCancel=&#123;() =&gt; setOpen(false)&#125;       /&gt;     &lt;/&gt;   ); &#125;</code></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/12/25/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -25,6 +12,68 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hooks</title>
+    <url>/2020/12/27/hooks/</url>
+    <content><![CDATA[<h2 id="关于hooks"><a href="#关于hooks" class="headerlink" title="关于hooks"></a>关于hooks</h2><h3 id="什么是React-Hooks"><a href="#什么是React-Hooks" class="headerlink" title="什么是React Hooks"></a>什么是React Hooks</h3><p>React Hooks是React 16.7.0版本推出的新特性</p>
+<h4 id="React-Hooks-要解决的问题是状态共享"><a href="#React-Hooks-要解决的问题是状态共享" class="headerlink" title="React Hooks 要解决的问题是状态共享"></a>React Hooks 要解决的问题是状态共享</h4><p>大家都知道类组件和函数组件最大的区别就是一个是有状态(state)一个是无状态,下面给大家看一下hooks基本用法<br>                function App() {<br>  const [open, setOpen] = useState(false);<br>  return (<br>    &lt;&gt;<br>      &lt;Button type=”primary” onClick={() =&gt; setOpen(true)}&gt;<br>        Open Modal<br>      <br>      &lt;Modal<br>        visible={open}<br>        onOk={() =&gt; setOpen(false)}<br>        onCancel={() =&gt; setOpen(false)}<br>      /&gt;<br>    &lt;/&gt;<br>  );<br>}<br>可以看到，React Hooks 就像一个内置的打平 renderProps 库，我们可以随时创建一个值，与修改这个值的方法。看上去像 function 形式的 setState，其实这等价于依赖注入，与使用 setState 相比，这个组件是没有状态的。<br>React Hooks 带来的好处不仅是 “更 FP，更新粒度更细，代码更清晰”，还有如下三个特性：</p>
+<p>多个状态不会产生嵌套，写法还是平铺的（renderProps 可以通过 compose 解决，可不但使用略为繁琐，而且因为强制封装一个新对象而增加了实体数量）。<br>Hooks 可以引用其他 Hooks。<br>更容易将组件的 UI 与状态分离。<br>利用 useEffect 代替一些生命周期</p>
+<p>在 useState 位置附近，可以使用 useEffect 处理副作用：<br>useEffect 的代码既会在初始化时候执行，也会在后续每次 rerender 时执行，而返回值在析构时执行。<br>class Component extends React.PureComponent&lt;Props, State&gt; {<br>  private chart: G2.Chart = null;<br>  private rootDomRef: React.ReactInstance = null;</p>
+<p>  componentDidMount() {<br>    this.rootDom = ReactDOM.findDOMNode(this.rootDomRef) as HTMLDivElement;</p>
+<pre><code>this.chart = new G2.Chart(&#123;
+  container: document.getElementById(&quot;chart&quot;),
+  forceFit: true,
+  height: 300
+&#125;);
+this.freshChart(this.props);</code></pre>
+<p>  }</p>
+<p>  componentWillReceiveProps(nextProps: Props) {<br>    this.freshChart(nextProps);<br>  }</p>
+<p>  componentWillUnmount() {<br>    this.chart.destroy();<br>  }</p>
+<p>  freshChart(props: Props) {<br>    // do something<br>    this.chart.render();<br>  }</p>
+<p>  render() {<br>    return &lt;div ref={ref =&gt; (this.rootDomRef = ref)} /&gt;;<br>  }<br>}<br>用 React Hooks 可以这么做：</p>
+<p>function App() {<br>  const ref = React.useRef(null);<br>  let chart: G2.Chart = null;</p>
+<p>  React.useEffect(() =&gt; {<br>    if (!chart) {<br>      chart = new G2.Chart({<br>        container: ReactDOM.findDOMNode(ref.current) as HTMLDivElement,<br>        width: 500,<br>        height: 500<br>      });<br>    }</p>
+<pre><code>// do something
+chart.render();
+
+return () =&gt; chart.destroy();</code></pre>
+<p>  });</p>
+<p>  return <div ref="{ref}">;<br>}</div></p>
+<h4 id="Hooks-带来的约定"><a href="#Hooks-带来的约定" class="headerlink" title="Hooks 带来的约定"></a>Hooks 带来的约定</h4><p>Hook 函数必须以 “use” 命名开头，因为这样才方便 eslint 做检查，防止用 condition 判断包裹 useHook 语句。</p>
+<h4 id="为什么不能用-condition-包裹-useHook-语句，详情可以见-官方文档，这里简单介绍一下。"><a href="#为什么不能用-condition-包裹-useHook-语句，详情可以见-官方文档，这里简单介绍一下。" class="headerlink" title="为什么不能用 condition 包裹 useHook 语句，详情可以见 官方文档，这里简单介绍一下。"></a>为什么不能用 condition 包裹 useHook 语句，详情可以见 官方文档，这里简单介绍一下。</h4><p>React Hooks 并不是通过 Proxy 或者 getters 实现的（具体可以看这篇文章 React hooks: not magic, just arrays），而是通过数组实现的，每次 useState 都会改变下标，如果 useState被包裹在 condition 中，那每次执行的下标就可能对不上，导致 useState 导出的 setter 更新错数据。</p>
+<p>虽然有 eslint-plugin-react-hooks 插件保驾护航，但这第一次将 “约定优先” 理念引入了 React 框架中，带来了前所未有的代码命名和顺序限制（函数命名遭到官方限制，JS 自由主义者也许会暴跳如雷），但带来的便利也是前所未有的（没有比 React Hooks 更好的状态共享方案了，约定带来提效，自由的代价就是回到 renderProps or HOC，各团队可以自行评估）。</p>
+<p>React 约定大于配置脚手架 nextjs umi 以及笔者的 pri 都通过有 “约定路由” 的功能，大大降低了路由配置复杂度，那么 React Hooks 就像代码级别的约定，大大降低了代码复杂度。<br>状态与 UI 的界限会越来越清晰<br>因为 React Hooks 的特性，如果一个 Hook 不产生 UI，那么它可以永远被其他 Hook 封装，虽然允许有副作用，但是被包裹在 useEffect 里，总体来说还是挺函数式的。而 Hooks 要集中在 UI 函数顶部写，也很容易养成书写无状态 UI 组件的好习惯，践行 “状态与 UI 分开” 这个理念会更容易。</p>
+<p>不过这个理念稍微有点蹩脚的地方，那就是 “状态” 到底是什么。</p>
+<p>function App() {<br>  const [count, setCount] = useCount();<br>  return <span>{count}</span>;<br>}<br>我们知道 useCount 算是无状态的，因为 React Hooks 本质就是 renderProps 或者 HOC 的另一种写法，换成 renderProps 就好理解了：</p>
+<p><Count>{(count, setCount) =&gt; <App count="{count}" setcount="{setCount}">}</App></Count>;</p>
+<p>function App(props) {<br>  return <span>{props.count}</span>;<br>}</p>
+<h4 id="可以看到-App-组件是无状态的，输出完全由输入（Props）决定。"><a href="#可以看到-App-组件是无状态的，输出完全由输入（Props）决定。" class="headerlink" title="可以看到 App 组件是无状态的，输出完全由输入（Props）决定。"></a>可以看到 App 组件是无状态的，输出完全由输入（Props）决定。</h4><h4 id="那么有状态无-UI-的组件就是-useCount-了："><a href="#那么有状态无-UI-的组件就是-useCount-了：" class="headerlink" title="那么有状态无 UI 的组件就是 useCount 了："></a>那么有状态无 UI 的组件就是 useCount 了：</h4><p>function useCount() {<br>  const [count, setCount] = useState(0);<br>  return [count, setCount];<br>}<br>有状态的地方应该指 useState(0) 这句，不过这句和无状态 UI 组件 App 的 useCount() 很像，既然 React 把 useCount 成为自定义 Hook，那么 useState 就是官方 Hook，具有一样的定义，因此可以认为 useCount 是无状态的，useState 也是一层 renderProps，最终的状态其实是 useState 这个 React 内置的组件。</p>
+<p>我们看 renderProps 嵌套的表达：</p>
+<UseState>
+  {(count, setCount) => (
+    <UseCount>
+      {" "}
+      {/**虽然是透传，但给 count 做了去重，不可谓没有作用 */}
+      {(count, setCount) => <App count="{count}" setcount="{setCount}">}
+    </App></UseCount>
+  )}
+</UseState>
+能确定的是，App 一定有 UI，而上面两层父级组件一定没有 UI。为了最佳实践，我们尽量避免 App 自己维护状态，而其父级的 RenderProps 组件可以维护状态（也可以不维护状态，做个二传手）。因此可以考虑在 “有状态的组件没有渲染，有渲染的组件没有状态” 这句话后面加一句：没渲染的组件也可以没状态。
+
+<h4 id="React-Hooks-实践"><a href="#React-Hooks-实践" class="headerlink" title="React Hooks 实践"></a>React Hooks 实践</h4><p>通过上面的理解，你已经对 React Hooks 有了基本理解，也许你也看了 React Hooks 基本实现剖析（就是数组），但理解实现原理就可以用好了吗？学的是知识，而用的是技能，看别人的用法就像刷抖音一样（哇，饭还可以这样吃？），你总会有新的收获。</p>
+<h4 id="DOM-副作用修改-监听"><a href="#DOM-副作用修改-监听" class="headerlink" title="DOM 副作用修改 / 监听"></a>DOM 副作用修改 / 监听</h4><p>做一个网页，总有一些看上去和组件关系不大的麻烦事，比如修改页面标题（切换页面记得改成默认标题）、监听页面大小变化（组件销毁记得取消监听）、断网时提示（一层层装饰器要堆成小山了）。而 React Hooks 特别擅长做这些事，造这种轮子，大小皆宜。</p>
+<p>由于 React Hooks 降低了高阶组件使用成本，那么一套生命周期才能完成的 “杂耍” 将变得非常简单。<br>下面举几个例子：</p>
+<h4 id="修改页面-title"><a href="#修改页面-title" class="headerlink" title="修改页面 title"></a>修改页面 title</h4><p>效果：在组件里调用 useDocumentTitle 函数即可设置页面标题，且切换页面时，页面标题重置为默认标题 “前端精读”。</p>
+<h4 id="useDocumentTitle-“个人中心”"><a href="#useDocumentTitle-“个人中心”" class="headerlink" title="useDocumentTitle(“个人中心”);"></a>useDocumentTitle(“个人中心”);</h4><p>实现：直接用 document.title 赋值，不能再简单。在销毁时再次给一个默认标题即可，这个简单的函数可以抽象在项目工具函数里，每个页面组件都需要调用。</p>
+<p>function useDocumentTitle(title) {<br>  useEffect(<br>    () =&gt; {<br>      document.title = title;<br>      return () =&gt; (document.title = “前端精读”);<br>    },<br>    [title]<br>  );<br>}</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>promise</title>
+    <url>/2020/12/25/promise/</url>
+    <content><![CDATA[<p>我的</p>
 ]]></content>
   </entry>
 </search>
