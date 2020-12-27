@@ -20,4 +20,10 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>hooks</title>
+    <url>/2020/12/27/hooks/</url>
+    <content><![CDATA[<h2 id="关于hooks"><a href="#关于hooks" class="headerlink" title="关于hooks"></a>关于hooks</h2><h3 id="什么是React-Hooks"><a href="#什么是React-Hooks" class="headerlink" title="什么是React Hooks"></a>什么是React Hooks</h3><p>React Hooks是React 16.7.0版本推出的新特性</p>
+]]></content>
+  </entry>
 </search>
