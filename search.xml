@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>promise</title>
-    <url>/2020/12/25/promise/</url>
-    <content><![CDATA[<p>我的</p>
+    <title>Hooks相对高阶组件和Class组件有什么优势/缺点？</title>
+    <url>/2020/12/27/Hooks%E7%9B%B8%E5%AF%B9%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%92%8CClass%E7%BB%84%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF-%E7%BC%BA%E7%82%B9%EF%BC%9F/</url>
+    <content><![CDATA[<h3 id="一、Hooks组件相比于Class组件"><a href="#一、Hooks组件相比于Class组件" class="headerlink" title="一、Hooks组件相比于Class组件"></a>一、Hooks组件相比于Class组件</h3><p>hooks组件其实是降低了react开发的使用难度的，让新手可以在不使用class组件的情况下依然可以进行项目开发。<br>1.不需要学习class组件的生命周期的使用了。【仅做个了解即可】<br>2.如果你的js基础不是很扎实的话，就帮你暂时省去this的指向问题的学习了。<br>3.可以不用使用高阶组件依然可以进行功能复用了。<br>4.如果开发团队的代码质量很高的话，那么维护起来比class组件简单N倍。<br>5.只需要学好hooks组件的hooks【感觉有点别扭，但不是错误哈】那么你的项目性能就已经是很优的状态了。</p>
+<h4 id="二、Hooks组件相比于高阶组件"><a href="#二、Hooks组件相比于高阶组件" class="headerlink" title="二、Hooks组件相比于高阶组件"></a>二、Hooks组件相比于高阶组件</h4><p>Hooks组件复用逻辑相比高阶组件复用逻辑更易维护，可以很清楚的知道当前的逻辑代码在哪里，然后进行维护。</p>
+<h5 id="举一个极端的例子："><a href="#举一个极端的例子：" class="headerlink" title="举一个极端的例子："></a>举一个极端的例子：</h5><p>某个组件从3个以上的高阶组件去复用逻辑。<br>那么它的代码可能看起来是这样：</p>
+<p>1.this.props.xxx();<br>2.this.props.aaa();<br>3.this.props.bbb();</p>
+<p>如果xxx出现了问题，如果对项目不熟悉的人的话想要找这个方法就要分别去这三个高阶组件里面去找，或者去父组件里面去找。</p>
+<p>可维护性差！</p>
+<p>我们来看一下Hooks组件：<br>1.const { xxx } = useXXX();<br>2.const { aaa } = useAAA();<br>3.const { bbb } = useBBB();</p>
+<p>当我们发现那个有问题的时候哪里有问题点哪里即可，很轻松的就能找到代码。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/12/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -23,34 +44,6 @@
 <p>子类使用构造器constructor的时候，必须使用super关键字，用来扩展构造器<br>子类同名方法会覆盖父类同名方法，使用super关键字后则可以调用到父类的同名函数<br>class Person{<br>    constructor(name){<br>        this.name = name;<br>    }<br>    getName(){<br>        console.log(‘我是父级类getName方法输出来的’);<br>    }<br>    getAge(){<br>        console.log(this.age);<br>    }<br>}<br>class Student extends Person{<br>    constructor(name,age,sex){<br>        super();//必须先调用super，才能使用constructor，才能使用this对象<br>        this.name = name;<br>        this.age = age;<br>        this.sex = sex;<br>    }<br>    getName(){<br>        super.getName();//调用super，才能调用父类同名函数getName<br>        console.log(‘我是子级类getName方法输出来的’);<br>    }<br>}<br>var stu1 = new Student(‘Ethel’,18);<br>stu1.getName();<br>// 我是父级类getName方法输出来的<br>// 我是子级类getName方法输出来的<br>static关键字<br>static关键字是类的方法<br>只能通过类名来调用，不能被实例对象调用<br>static方法也可以被继承<br>class Person{<br>    constructor(name,age){<br>        this.name = name;<br>        this.age = age;<br>    }<br>    static getAge(){<br>        console.log(‘我是静态属性static’);<br>    }<br>}<br>class Student extends Person{}<br>var stu1 = new Student(‘Ethel’,2);<br>Person.getAge();//我是静态属性static<br>Student.getAge();//我是静态属性static<br>stu1.getAge();//stu1.getAge is not a function<br>class 实例化的背后原理<br>使用 class 的语法，让开发者告别了使用 prototype 模仿面向对象的时代。但是，class 并不是 ES6 引入的全新概念，它的原理依旧是原型继承。</p>
 <p>typeof class == “function”</p>
 <p>通过类型判断，我们可以得知，class 的并不是什么全新的数据类型，它实际只是 function (或者说 object)。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>vuex的属性</title>
-    <url>/2020/12/28/vuex%E7%9A%84%E5%B1%9E%E6%80%A7/</url>
-    <content><![CDATA[<h4 id="vuex就是一个vue框架中状态管理-在main-js引入store，注入"><a href="#vuex就是一个vue框架中状态管理-在main-js引入store，注入" class="headerlink" title="vuex就是一个vue框架中状态管理 在main.js引入store，注入"></a>vuex就是一个vue框架中状态管理 在main.js引入store，注入</h4><p>有5种属性 分别是<br>1.state 仓库全局数据存源地<br>2.getters  类似于组件中的computed 从基本数据派生出来的数据<br>3.mutations  1.用来修改数据通过调用commit（函数名，参数）<br>        2.必须是纯函数 -可调用多次 只要参数一样结果必须一样<br>4.actions   用于请求异步<br>5.modules  模块化vuex<br>它的应用场景：一般应用单页面，组件之间状态 加入购物车 等</p>
-<div class="box"></div>
-<style>
-        .box {
-            width: 0;
-            height: 0;
-            border: 30px solid;
-            background: pink;
-            border-color: transparent transparent white transparent;
-        }
-    </style>]]></content>
-  </entry>
-  <entry>
-    <title>Hooks相对高阶组件和Class组件有什么优势/缺点？</title>
-    <url>/2020/12/27/Hooks%E7%9B%B8%E5%AF%B9%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%92%8CClass%E7%BB%84%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF-%E7%BC%BA%E7%82%B9%EF%BC%9F/</url>
-    <content><![CDATA[<h3 id="一、Hooks组件相比于Class组件"><a href="#一、Hooks组件相比于Class组件" class="headerlink" title="一、Hooks组件相比于Class组件"></a>一、Hooks组件相比于Class组件</h3><p>hooks组件其实是降低了react开发的使用难度的，让新手可以在不使用class组件的情况下依然可以进行项目开发。<br>1.不需要学习class组件的生命周期的使用了。【仅做个了解即可】<br>2.如果你的js基础不是很扎实的话，就帮你暂时省去this的指向问题的学习了。<br>3.可以不用使用高阶组件依然可以进行功能复用了。<br>4.如果开发团队的代码质量很高的话，那么维护起来比class组件简单N倍。<br>5.只需要学好hooks组件的hooks【感觉有点别扭，但不是错误哈】那么你的项目性能就已经是很优的状态了。</p>
-<h4 id="二、Hooks组件相比于高阶组件"><a href="#二、Hooks组件相比于高阶组件" class="headerlink" title="二、Hooks组件相比于高阶组件"></a>二、Hooks组件相比于高阶组件</h4><p>Hooks组件复用逻辑相比高阶组件复用逻辑更易维护，可以很清楚的知道当前的逻辑代码在哪里，然后进行维护。</p>
-<h5 id="举一个极端的例子："><a href="#举一个极端的例子：" class="headerlink" title="举一个极端的例子："></a>举一个极端的例子：</h5><p>某个组件从3个以上的高阶组件去复用逻辑。<br>那么它的代码可能看起来是这样：</p>
-<p>1.this.props.xxx();<br>2.this.props.aaa();<br>3.this.props.bbb();</p>
-<p>如果xxx出现了问题，如果对项目不熟悉的人的话想要找这个方法就要分别去这三个高阶组件里面去找，或者去父组件里面去找。</p>
-<p>可维护性差！</p>
-<p>我们来看一下Hooks组件：<br>1.const { xxx } = useXXX();<br>2.const { aaa } = useAAA();<br>3.const { bbb } = useBBB();</p>
-<p>当我们发现那个有问题的时候哪里有问题点哪里即可，很轻松的就能找到代码。</p>
 ]]></content>
   </entry>
   <entry>
@@ -110,17 +103,24 @@ return () =&gt; chart.destroy();</code></pre>
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/12/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>promise</title>
+    <url>/2020/12/25/promise/</url>
+    <content><![CDATA[<p>我的</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>vuex的属性</title>
+    <url>/2020/12/28/vuex%E7%9A%84%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[<h4 id="vuex就是一个vue框架中状态管理-在main-js引入store，注入"><a href="#vuex就是一个vue框架中状态管理-在main-js引入store，注入" class="headerlink" title="vuex就是一个vue框架中状态管理 在main.js引入store，注入"></a>vuex就是一个vue框架中状态管理 在main.js引入store，注入</h4><p>有5种属性 分别是<br>1.state 仓库全局数据存源地<br>2.getters  类似于组件中的computed 从基本数据派生出来的数据<br>3.mutations  1.用来修改数据通过调用commit（函数名，参数）<br>        2.必须是纯函数 -可调用多次 只要参数一样结果必须一样<br>4.actions   用于请求异步<br>5.modules  模块化vuex<br>它的应用场景：一般应用单页面，组件之间状态 加入购物车 等</p>
+<div class="box"></div>
+<style>
+        .box {
+            width: 0;
+            height: 0;
+            border: 30px solid;
+            background: pink;
+            border-color: transparent transparent white transparent;
+        }
+    </style>]]></content>
   </entry>
 </search>
