@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    Archives |
+    vuex的属性 |
     
     Hexo</title>
   
@@ -31,137 +31,75 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article class="articles">
+  <article id="post-vuex的属性" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
     
-    <h1 class="page-type-title">Archives</h1>
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2020" class="archive-year">2020</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/12/28/vuex%E7%9A%84%E5%B1%9E%E6%80%A7/" class="archive-article-date">
-  <time datetime="2020-12-28T10:39:17.000Z" itemprop="datePublished">12/28</time>
-</a>
+    <header class="article-header">
       
 
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/12/28/vuex%E7%9A%84%E5%B1%9E%E6%80%A7/">vuex的属性</a>
-</h2>
+<h1 class="article-title" itemprop="name">
+  vuex的属性
+</h1>
 
 
 
     </header>
     
+
     
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-react">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/12/27/Hooks%E7%9B%B8%E5%AF%B9%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%92%8CClass%E7%BB%84%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF-%E7%BC%BA%E7%82%B9%EF%BC%9F/" class="archive-article-date">
-  <time datetime="2020-12-27T12:15:41.000Z" itemprop="datePublished">12/27</time>
+    <div class="article-meta">
+      <a href="/2020/12/28/vuex%E7%9A%84%E5%B1%9E%E6%80%A7/" class="article-date">
+  <time datetime="2020-12-28T10:39:17.000Z" itemprop="datePublished">2020-12-28</time>
 </a>
-      
-
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/12/27/Hooks%E7%9B%B8%E5%AF%B9%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%92%8CClass%E7%BB%84%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF-%E7%BC%BA%E7%82%B9%EF%BC%9F/">Hooks相对高阶组件和Class组件有什么优势/缺点？</a>
-</h2>
-
-
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/12/27/hooks/" class="archive-article-date">
-  <time datetime="2020-12-27T10:55:58.000Z" itemprop="datePublished">12/27</time>
-</a>
-      
-
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/12/27/hooks/">hooks</a>
-</h2>
-
-
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/12/25/promise/" class="archive-article-date">
-  <time datetime="2020-12-25T09:44:23.000Z" itemprop="datePublished">12/25</time>
-</a>
-      
-
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/12/25/promise/">promise</a>
-</h2>
-
-
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/12/25/hello-world/" class="archive-article-date">
-  <time datetime="2020-12-25T09:24:51.331Z" itemprop="datePublished">12/25</time>
-</a>
-      
-
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/12/25/hello-world/">Hello World</a>
-</h2>
-
-
-
-    </header>
-    
-    
-  </div>
-</article>
-      
       
     </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <h4 id="vuex就是一个vue框架中状态管理-在main-js引入store，注入"><a href="#vuex就是一个vue框架中状态管理-在main-js引入store，注入" class="headerlink" title="vuex就是一个vue框架中状态管理 在main.js引入store，注入"></a>vuex就是一个vue框架中状态管理 在main.js引入store，注入</h4><p>有5种属性 分别是<br>1.state 仓库全局数据存源地<br>2.getters  类似于组件中的computed 从基本数据派生出来的数据<br>3.mutations  1.用来修改数据通过调用commit（函数名，参数）<br>        2.必须是纯函数 -可调用多次 只要参数一样结果必须一样<br>4.actions   用于请求异步<br>5.modules  模块化vuex<br>它的应用场景：一般应用单页面，组件之间状态 加入购物车 等</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/28/vuex%E7%9A%84%E5%B1%9E%E6%80%A7/" data-id="ckj8fkgq00003wsuj730j0j9n" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
   </div>
+
   
+  
+<nav class="article-nav">
+  
+  
+  <a href="/2020/12/27/Hooks%E7%9B%B8%E5%AF%B9%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%92%8CClass%E7%BB%84%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF-%E7%BC%BA%E7%82%B9%EF%BC%9F/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">Hooks相对高阶组件和Class组件有什么优势/缺点？</div>
+  </a>
+  
+</nav>
+
   
 
   
+  
+  
+  
+
+</article>
 </section>
     <footer class="footer">
   <div class="outer">
@@ -169,6 +107,8 @@
       <ul class="list-inline">
   
   <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
   
 </ul>
     </div>
@@ -258,6 +198,23 @@
 
 
 
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
 
 
 
