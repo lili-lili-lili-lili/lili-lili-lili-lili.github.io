@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    promise |
+    react-redux的原理 |
     
     Hexo</title>
   
@@ -31,7 +31,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-promise" class="article article-type-post" itemscope
+  <article id="post-react-redux的原理" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,7 +40,7 @@
       
 
 <h1 class="article-title" itemprop="name">
-  promise
+  react-redux的原理
 </h1>
 
 
@@ -50,8 +50,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/12/25/promise/" class="article-date">
-  <time datetime="2020-12-25T09:44:23.000Z" itemprop="datePublished">2020-12-25</time>
+      <a href="/2020/12/29/react-redux%E7%9A%84%E5%8E%9F%E7%90%86/" class="article-date">
+  <time datetime="2020-12-29T12:51:54.000Z" itemprop="datePublished">2020-12-29</time>
 </a>
       
     </div>
@@ -59,50 +59,28 @@
 
     
     
+<div class="tocbot"></div>
+
     
 
     <div class="article-entry" itemprop="articleBody">
       
-<div class="justified-gallery" id="gallery">
-  
-  <div>
-    <a class="fancybox" data-fancybox="images" data-caption="img_caption" target="_blank" href="http://pic.netbian.com/uploads/allimg/200602/211830-15911039105775.jpg"
-      rel="gallery_ckj9zyn0b0006igujgo7z4xaj noopener" title="img_caption">
-      <img src="http://pic.netbian.com/uploads/allimg/200602/211830-15911039105775.jpg" itemprop="image" alt="img_caption">
-    </a>
-  </div>
-  
-  <div>
-    <a class="fancybox" data-fancybox="images" data-caption="img_caption" target="_blank" href="http://pic.netbian.com/uploads/allimg/201012/223213-160251313355e9.jpg"
-      rel="gallery_ckj9zyn0b0006igujgo7z4xaj noopener" title="img_caption">
-      <img src="http://pic.netbian.com/uploads/allimg/201012/223213-160251313355e9.jpg" itemprop="image" alt="img_caption">
-    </a>
-  </div>
-  
-</div>
-
       
-<div class="article-gallery">
-  <div class="article-gallery-photos">
-    
-    
-    <img src="http://pic.netbian.com/uploads/allimg/201215/195916-16080335566e9f.jpg" itemprop="image">
-    
-    
-    
-    <img src="http://pic.netbian.com/uploads/allimg/191121/224644-1574347604d36e.jpg" itemprop="image">
-    
-    
-  </div>
-</div>
-
       
-      <p>请点击侧边栏查看内容</p>
+      <h3 id="Redux是JavaScript状态容器，提供可预测化的状态管理。"><a href="#Redux是JavaScript状态容器，提供可预测化的状态管理。" class="headerlink" title="Redux是JavaScript状态容器，提供可预测化的状态管理。"></a><strong>Redux是JavaScript状态容器，提供可预测化的状态管理。</strong></h3><h4 id="Redux有三大原则：单一数据来源、State是只读的、使用纯函数进行更改。"><a href="#Redux有三大原则：单一数据来源、State是只读的、使用纯函数进行更改。" class="headerlink" title="Redux有三大原则：单一数据来源、State是只读的、使用纯函数进行更改。"></a>Redux有三大原则：单一数据来源、State是只读的、使用纯函数进行更改。</h4><p><strong>Redux原理是集中式管理，主要有三个核心方法：action、store、reducer。</strong></p>
+<h4 id="Redux工作流程："><a href="#Redux工作流程：" class="headerlink" title="Redux工作流程："></a>Redux工作流程：</h4><p>1、应用调用store的dispatch接受action传入store；</p>
+<p>2、reducer进行state操作；</p>
+<p>3、应用通过store提供的getState获取最新的数据。<br>在Redux中只能定义一个可更新状态的store**，redux把store和Dispatcher合并，结构更加简单清晰。</p>
+<h4 id="Redux的缺点："><a href="#Redux的缺点：" class="headerlink" title="Redux的缺点："></a>Redux的缺点：</h4><ul>
+<li>一个组件所需要的数据，必须由父组件传过来，而不能向Flux一样直接从store获取。</li>
+<li>当一个组件数据更新时，即使父组件不需要用到这个组件，夫组件还是会重新render。<h4 id="如何向下分发数据？"><a href="#如何向下分发数据？" class="headerlink" title="如何向下分发数据？"></a>如何向下分发数据？</h4></li>
+</ul>
+<p>import {provider} from ‘react-redux’<br>通过provider的store属性向所有子组件中传递redux中的store<br>import {connect} from ‘react-redux’<br>通过高阶组件connect与redux仓库建立连接，并且向仓库传递参数修改state的方法以及从仓库中获取state的数据</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/25/promise/" data-id="ckj9zyn0b0006igujgo7z4xaj" class="article-share-link">
+      <a data-url="http://example.com/2020/12/29/react-redux%E7%9A%84%E5%8E%9F%E7%90%86/" data-id="ckj9zyn0c0007iguj0a2lhmdb" class="article-share-link">
         Share
       </a>
       
@@ -114,19 +92,10 @@
   
 <nav class="article-nav">
   
-  <a href="/2020/12/27/hooks/" class="article-nav-link">
-    <strong class="article-nav-caption">Newer</strong>
-    <div class="article-nav-title">
-      
-      hooks
-      
-    </div>
-  </a>
   
-  
-  <a href="/2020/12/25/hello-world/" class="article-nav-link">
+  <a href="/2020/12/29/ts%E6%96%87%E6%A1%A3/" class="article-nav-link">
     <strong class="article-nav-caption">Older</strong>
-    <div class="article-nav-title">Hello World</div>
+    <div class="article-nav-title">ts文档</div>
   </a>
   
 </nav>
