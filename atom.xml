@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-30T11:04:34.974Z</updated>
+  <updated>2020-12-30T11:16:20.552Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js变量提升</title>
+    <link href="http://example.com/2020/12/30/js%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/"/>
+    <id>http://example.com/2020/12/30/js%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/</id>
+    <published>2020-12-30T11:08:36.000Z</published>
+    <updated>2020-12-30T11:16:20.552Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><p>在使用一个变量的时候，我们必须先声明一个变量，我们共有 var，let，const 这三个关键字可选择，具体使用哪个关键字，那就要根据业务场景来使用。声明一个变量可以赋值为任何数据类型的，因为JS的松散性，然后要注意的是声明变量的时候可以简写。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br></pre></td></tr></table></figure><h4 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h4><p>我们在使用变量或函数的时候，理解什么时候被初始化值的是至关重要。变量提升是指在声明一个变量之前就使用了变量，在全局作用域中，只有使用var关键字声明的变量才会变量提升，变量提升的时候浏览器只知道有这么一个变量，但你下面定义的值还没有赋值给这个变量，这时候变量的值是undefined的，等到浏览器执行到下面的代码的时候才是一个赋值的过程。所以变量提升的时候没有初始化值。用var声明变量的时候回给window增加一个相同变量名的属性，所以你也可以通过属性名的方式获取这个变量的值，当没有使用任何关键字声明时，只是给一个变量赋值时，变量也相当于给window增加一个相同变量名的属性。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// -&gt; undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// -&gt; 10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.a); <span class="comment">// -&gt; 10</span></span><br><span class="line"></span><br><span class="line">b = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.b); <span class="comment">// -&gt; 10</span></span><br></pre></td></tr></table></figure><h4 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h4><p>定义一个函数可以使用函数声明和函数表达式，这两种方式在提升的时候也是有区别的，函数声明会提升到作用域的顶部，在提升的时候会分配一个内存空间，变量指向这个函数的内存空间，所以在定义一个函数之前是可以执行这个函数的，函数声明的方式定义函数会提升。而函数表达式就跟变量提升，仅仅只是声明，并没有给其赋值。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fn1() <span class="comment">// -&gt; &quot;函数声明&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;函数声明&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn2() <span class="comment">// -&gt; &quot;fn2 is not a function&quot;</span></span><br><span class="line"><span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;函数表达式&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="重复声明"><a href="#重复声明" class="headerlink" title="重复声明"></a>重复声明</h4><p>用var可以重复声明同一个变量，如果重复声明了，就相当于给变量赋值一样，用let和const在同一个作用域中是不可以重复声明同一个变量的，如果重复声明了会报错。关于函数表达式，如果重复的定义相同函数名的函数，后面的会覆盖前面的函数，因为JavaScript没有重载。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// -&gt; 100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;第一个fn函数&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;第二个fn函数&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fn()) <span class="comment">// -&gt; &quot;第二个fn函数&quot;</span></span><br></pre></td></tr></table></figure><p>特殊情况</p><p>1、在块级作用域中（如if，for），var声明变量function定义函数的时候，他们都是只声明但还未初始化值。2、return语句下面的语句也是会提升的，变量是只提前声明，函数是声明跟初始化值一起完成。3、return本身这条语句不会提升。4、自执行函数不会提升。5、回调函数不会提升。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;声明变量&quot;&gt;&lt;a href=&quot;#声明变量&quot; class=&quot;headerlink&quot; title=&quot;声明变量&quot;&gt;&lt;/a&gt;声明变量&lt;/h3&gt;&lt;p&gt;在使用一个变量的时候，我们必须先声明一个变量，我们共有 var，let，const 这三个关键字可选择，具体使用哪个关键字，</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>usestrict严格模式</title>
