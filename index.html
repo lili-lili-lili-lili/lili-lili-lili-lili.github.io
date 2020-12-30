@@ -101,14 +101,14 @@
   
   <div>
     <a class="fancybox" data-fancybox="images" data-caption="img_caption" target="_blank" href="http://pic.netbian.com/uploads/allimg/200602/211830-15911039105775.jpg"
-      rel="gallery_ckj9zzaq80006xcuj8jz02ta1 noopener" title="img_caption">
+      rel="gallery_ckjbbbk9w00096gujgg9agmot noopener" title="img_caption">
       <img src="http://pic.netbian.com/uploads/allimg/200602/211830-15911039105775.jpg" itemprop="image" alt="img_caption">
     </a>
   </div>
   
   <div>
     <a class="fancybox" data-fancybox="images" data-caption="img_caption" target="_blank" href="http://pic.netbian.com/uploads/allimg/201012/223213-160251313355e9.jpg"
-      rel="gallery_ckj9zzaq80006xcuj8jz02ta1 noopener" title="img_caption">
+      rel="gallery_ckjbbbk9w00096gujgg9agmot noopener" title="img_caption">
       <img src="http://pic.netbian.com/uploads/allimg/201012/223213-160251313355e9.jpg" itemprop="image" alt="img_caption">
     </a>
   </div>
@@ -120,13 +120,13 @@
   <div class="article-gallery-photos">
     
     
-    <a class="article-gallery-img" href="/2020/12/25/promise/" rel="gallery_ckj9zzaq80006xcuj8jz02ta1">
+    <a class="article-gallery-img" href="/2020/12/25/promise/" rel="gallery_ckjbbbk9w00096gujgg9agmot">
       <img src="http://pic.netbian.com/uploads/allimg/201215/195916-16080335566e9f.jpg" itemprop="image">
     </a>
     
     
     
-    <a class="article-gallery-img" href="/2020/12/25/promise/" rel="gallery_ckj9zzaq80006xcuj8jz02ta1">
+    <a class="article-gallery-img" href="/2020/12/25/promise/" rel="gallery_ckjbbbk9w00096gujgg9agmot">
       <img src="http://pic.netbian.com/uploads/allimg/191121/224644-1574347604d36e.jpg" itemprop="image">
     </a>
     
@@ -140,7 +140,89 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/25/promise/" data-id="ckj9zzaq80006xcuj8jz02ta1" class="article-share-link">
+      <a data-url="http://example.com/2020/12/25/promise/" data-id="ckjbbbk9w00096gujgg9agmot" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-usestrict严格模式" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/12/30/usestrict%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/">usestrict严格模式</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/12/30/usestrict%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <time datetime="2020-12-30T09:04:25.000Z" itemprop="datePublished">2020-12-30</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>JavaScript 严格模式</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>ECMAScript5引入了严格模式（strict mode）模式。严格模式为JavaScript定义了一种不同的解析与执行模型。在严格模式下，ECMAScript3中一些不确定的行为将得到处理，而且对于某些不安全按的操作也会抛出错误。</p>
+<h6 id="设立严格模式的目的："><a href="#设立严格模式的目的：" class="headerlink" title="设立严格模式的目的："></a>设立严格模式的目的：</h6><p>严格模式会将JavaScript陷阱直接变成明显的错误。<br>严格模式修正了一些引擎难以优化的错误。<br>同样的代码有些时候严格模式会比非严格模式下更快。<br>严格模式禁用了一些有可能在未来版本中定义的语法。</p>
+<h4 id="开启严格模式"><a href="#开启严格模式" class="headerlink" title="开启严格模式"></a>开启严格模式</h4><p>使用 ‘use strict’; 进入严格模式。 严格模式可以应用到整个script标签或个别函数中。</p>
+<h5 id="为整个script标签开启严格模式"><a href="#为整个script标签开启严格模式" class="headerlink" title="为整个script标签开启严格模式"></a>为整个script标签开启严格模式</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 整个语句都开启严格模式的语法</span></span><br><span class="line"><span class="meta">&quot;use strict&quot;</span>;<span class="comment">//放在第一行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;严格模式script&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="为某个函数开启严格模式"><a href="#为某个函数开启严格模式" class="headerlink" title="为某个函数开启严格模式"></a>为某个函数开启严格模式</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">strict</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">    &quot;use strict&quot;</span>;　　</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;严格模式函数&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">notStrict</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;正常模式函数&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="严格模式有哪些不同"><a href="#严格模式有哪些不同" class="headerlink" title="严格模式有哪些不同"></a>严格模式有哪些不同</h4><h5 id="全局变量显式声明"><a href="#全局变量显式声明" class="headerlink" title="全局变量显式声明"></a>全局变量显式声明</h5><p>在正常模式下，如果一个变量未声明就直接赋值，相当于创建一个全局变量。这给新人开发者带来便利的同时，给整个项目留下巨大隐患。严格模式将这种失误当成错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line">a=<span class="string">&#x27;严格模式&#x27;</span><span class="comment">//console打印会出现 ReferenceError: a is not defined报错</span></span><br></pre></td></tr></table></figure>
+<h5 id="不再Silently-Fail-默默失败"><a href="#不再Silently-Fail-默默失败" class="headerlink" title="不再Silently Fail(默默失败)"></a>不再Silently Fail(默默失败)</h5><p>严格模式会使引起静默失败(silently fail,注:不报错也没有任何效果)的赋值操作抛出异常。</p>
+<h5 id="不可变量赋值"><a href="#不可变量赋值" class="headerlink" title="不可变量赋值"></a>不可变量赋值</h5><h6 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h6><p>例如： NaN 是一个不可写的全局变量. 在正常模式下, 给 NaN 赋值不会产生任何作用; 开发者也不会受到任何错误反馈. 但在严格模式下, 给 NaN 赋值会抛出一个异常。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="literal">NaN</span> = <span class="number">3</span>; <span class="comment">//TypeError: Cannot assign to read only property &#x27;NaN&#x27; of #&lt;Object&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="给不可写属性赋值"><a href="#给不可写属性赋值" class="headerlink" title="给不可写属性赋值"></a>给不可写属性赋值</h6><p>给不可写属性赋值, 给只读属性(getter-only)赋值赋值, 给不可扩展对象(non-extensible object)的新属性赋值) 都会抛出异常:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 给不可写属性赋值</span></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj1, <span class="string">&quot;x&quot;</span>, &#123;</span><br><span class="line">    value: <span class="number">42</span>,</span><br><span class="line">    writable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line">obj1.x = <span class="number">9</span>; <span class="comment">// TypeError: Cannot assign to read only property &#x27;x&#x27; of #&lt;Object&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 给只读属性赋值</span></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    <span class="keyword">get</span> <span class="title">x</span>() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">17</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj2.x = <span class="number">5</span>; <span class="comment">// TypeError: Cannot set property x of #&lt;Object&gt; which has only a getter</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 给不可扩展对象的新属性赋值</span></span><br><span class="line"><span class="keyword">var</span> fixed = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.preventExtensions(fixed);</span><br><span class="line">fixed.newProp = <span class="string">&quot;haha&quot;</span>; <span class="comment">// TypeError: Can&#x27;t add property newProp, object is not extensible</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="删除不可删除属性"><a href="#删除不可删除属性" class="headerlink" title="删除不可删除属性"></a>删除不可删除属性</h5><p>在严格模式下，试图删除不可删除的属性是会跑输异常（之前不会产生任何效果）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">delete</span> <span class="built_in">Object</span>.prototype; <span class="comment">//TypeError: Cannot delete property &#x27;prototype&#x27; of function Object()</span></span><br></pre></td></tr></table></figure>
+<h5 id="参数名唯一"><a href="#参数名唯一" class="headerlink" title="参数名唯一"></a>参数名唯一</h5><p>严格模式要求函数的参数名唯一。在正常模式下, 最后一个重名参数名会掩盖之前的重名参数。 之前的参数仍然可以通过 arguments[i] 来访问。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, a, c</span>) </span>&#123; <span class="comment">//SyntaxError: Strict mode function may not have duplicate parameter names</span></span><br><span class="line"><span class="meta">    &quot;use strict&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="禁止八进制数字语法"><a href="#禁止八进制数字语法" class="headerlink" title="禁止八进制数字语法"></a>禁止八进制数字语法</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">015</span> + <span class="comment">// SyntaxError: Octal literals are not allowed in strict mode.</span></span><br><span class="line">          <span class="number">197</span> +</span><br><span class="line">          <span class="number">142</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="简化变量的使用-eval和with会在运行时修改或创建新的作用域"><a href="#简化变量的使用-eval和with会在运行时修改或创建新的作用域" class="headerlink" title="简化变量的使用 eval和with会在运行时修改或创建新的作用域"></a>简化变量的使用 eval和with会在运行时修改或创建新的作用域</h5><h6 id="禁用-with"><a href="#禁用-with" class="headerlink" title="禁用 with"></a>禁用 with</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//非严格模式下</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">17</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="comment">//x: 4</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="title">with</span>(<span class="params">obj</span>)</span> &#123;</span><br><span class="line">    x = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x);<span class="comment">//2</span></span><br><span class="line"><span class="comment">//严格模式下</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">17</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    x: <span class="number">4</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="title">with</span>(<span class="params">obj</span>)</span> &#123;</span><br><span class="line">    x = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(x);<span class="comment">//Strict mode code may not include a with statement报错</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="eval作用域"><a href="#eval作用域" class="headerlink" title="eval作用域"></a>eval作用域</h5><p>严格模式下的 eval 不在为上层范围(surrounding scope,注:包围eval代码块的范围)引入新变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">17</span>;</span><br><span class="line"><span class="keyword">var</span> evalX = <span class="built_in">eval</span>(<span class="string">&quot;&#x27;use strict&#x27;; var x = 32; x&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">//17   严格模式下，eval语句本身就是一个作用域，它所生成的变量只能用于eval内部。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> y = <span class="number">17</span>;</span><br><span class="line"><span class="keyword">var</span> evalY = <span class="built_in">eval</span>(<span class="string">&quot;var y = 32; y&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(y); <span class="comment">//32 在正常模式下, 代码 eval(“var x;”) 会给上层函数(surrounding function)或者全局引入一个新的变量x 。</span></span><br></pre></td></tr></table></figure>
+<h5 id="禁止删除声明变量"><a href="#禁止删除声明变量" class="headerlink" title="禁止删除声明变量"></a>禁止删除声明变量</h5><p>严格模式禁止删除声明变量。delete name 在严格模式下会引起语法错误</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> x;</span><br><span class="line"><span class="keyword">delete</span> x; <span class="comment">// SyntaxError: Delete of an unqualified identifier in strict mode.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">&quot;var x; delete x;&quot;</span>); <span class="comment">// SyntaxError</span></span><br></pre></td></tr></table></figure>
+<h5 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h5><p>在严格模式下通过this传递给一个函数的值不会被强制转换为一个对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;　　　　</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>);　　</span><br><span class="line">&#125;　</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;　　　　</span><br><span class="line"><span class="meta">    &quot;use strict&quot;</span>;　　　　</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f.bind(<span class="number">3</span>)();  <span class="comment">//[Number: 3]</span></span><br><span class="line">f1.bind(<span class="number">3</span>)();  <span class="comment">//3</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>对一个普通的函数来说，this总会是一个对象：不管调用时this它本来就是一个对象；还是用布尔值，字符串或者数字调用函数时函数里面被封装成对象的this；还是使用undefined或者null调用函数时this代表的全局对象（使用call, apply或者bind方法来指定一个确定的this）。</p>
+<p>这种自动转化为对象的过程不仅是一种性能上的损耗，同时在浏览器中暴露出全局对象也会成为安全隐患。</p>
+<p>所以对于一个开启严格模式的函数，指定的this不再被封装为对象，而且如果没有指定this的话它值是undefined。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">this</span>; &#125;</span><br><span class="line">assert(fun() === <span class="literal">undefined</span>);</span><br><span class="line">assert(fun.call(<span class="number">2</span>) === <span class="number">2</span>);</span><br><span class="line">assert(fun.apply(<span class="literal">null</span>) === <span class="literal">null</span>);</span><br><span class="line">assert(fun.call(<span class="literal">undefined</span>) === <span class="literal">undefined</span>);</span><br><span class="line">assert(fun.bind(<span class="literal">true</span>)() === <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<h5 id="保留的关键字"><a href="#保留的关键字" class="headerlink" title="保留的关键字"></a>保留的关键字</h5><p>在严格模式中一部分字符变成了保留的关键字。这些字符包括implements, interface, let, package, private, protected, public,<br>static和yield。在严格模式下，你不能再用这些名字作为变量名或者形参名。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">package</span>(<span class="params">protected</span>) // !!!</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">    &quot;use strict&quot;</span>;</span><br><span class="line">    <span class="keyword">var</span> implements; <span class="comment">// !!!</span></span><br><span class="line"></span><br><span class="line">    interface: <span class="comment">// !!!</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">break</span> interface; <span class="comment">// !!!</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">private</span>(<span class="params"></span>) </span>&#123;&#125; <span class="comment">// !!!</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"><span class="keyword">static</span></span>) </span>&#123;</span><br><span class="line"><span class="meta">    &#x27;use strict&#x27;</span>;</span><br><span class="line">&#125; <span class="comment">// !!!</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h5><p>严格模式只允许在全局作用域或函数作用域的顶层声明函数。也就是说，不允许在非函数的代码块内声明函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123; &#125; <span class="comment">// !!! 语法错误</span></span><br><span class="line">  f();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123; &#125; <span class="comment">// !!! 语法错误</span></span><br><span class="line">  f2();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) // 合法</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">eit</span>(<span class="params"></span>) </span>&#123; &#125; <span class="comment">// 同样合法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/30/usestrict%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F/" data-id="ckjbbbk9s00066gujcneuheau" class="article-share-link">
         Share
       </a>
       
@@ -199,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/29/react-redux%E7%9A%84%E5%8E%9F%E7%90%86/" data-id="ckj9zzaq90007xcujcvyaeq7b" class="article-share-link">
+      <a data-url="http://example.com/2020/12/29/react-redux%E7%9A%84%E5%8E%9F%E7%90%86/" data-id="ckjbbbk9q00056guj6j8m8vgn" class="article-share-link">
         Share
       </a>
       
@@ -413,7 +495,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/29/ts%E6%96%87%E6%A1%A3/" data-id="ckj9zzaqk0009xcuj3fmz7ipl" class="article-share-link">
+      <a data-url="http://example.com/2020/12/29/ts%E6%96%87%E6%A1%A3/" data-id="ckjbbbka9000a6guj9azygcny" class="article-share-link">
         Share
       </a>
       
@@ -488,7 +570,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/28/class%E7%B1%BB/" data-id="ckj9zzaq50003xcujdxgq213d" class="article-share-link">
+      <a data-url="http://example.com/2020/12/28/class%E7%B1%BB/" data-id="ckjbbbk9v00086guj9nsj4pya" class="article-share-link">
         Share
       </a>
       
@@ -548,7 +630,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/28/vuex%E7%9A%84%E5%B1%9E%E6%80%A7/" data-id="ckj9zzaqa0008xcujb7v371n6" class="article-share-link">
+      <a data-url="http://example.com/2020/12/28/vuex%E7%9A%84%E5%B1%9E%E6%80%A7/" data-id="ckjbbbk9u00076guj2o3cfddj" class="article-share-link">
         Share
       </a>
       
@@ -607,7 +689,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/27/Hooks%E7%9B%B8%E5%AF%B9%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%92%8CClass%E7%BB%84%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF-%E7%BC%BA%E7%82%B9%EF%BC%9F/" data-id="ckj9zzaq20001xcuj2sc54opz" class="article-share-link">
+      <a data-url="http://example.com/2020/12/27/Hooks%E7%9B%B8%E5%AF%B9%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%E5%92%8CClass%E7%BB%84%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF-%E7%BC%BA%E7%82%B9%EF%BC%9F/" data-id="ckjbbbk9h00016guj3c697uk7" class="article-share-link">
         Share
       </a>
       
@@ -682,7 +764,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/27/hooks/" data-id="ckj9zzaq80005xcuj5606g4qh" class="article-share-link">
+      <a data-url="http://example.com/2020/12/27/hooks/" data-id="ckjbbbk9o00046gujg3h5hs3g" class="article-share-link">
         Share
       </a>
       
@@ -741,7 +823,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/25/hello-world/" data-id="ckj9zzaq60004xcuje71ve9ue" class="article-share-link">
+      <a data-url="http://example.com/2020/12/25/hello-world/" data-id="ckjbbbk9m00036guj8gkmg5er" class="article-share-link">
         Share
       </a>
       
